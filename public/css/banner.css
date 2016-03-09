@@ -1,5 +1,5 @@
 .img-container img {
-  width: 130px;
+  width: 600px;
   height: auto;
 }
 
@@ -132,7 +132,8 @@
 }
 
 .service-icon {
-  margin-top: 1.5rem!important;
+  margin-top: 1.0rem!important;
+  margin-bottom: 1.0rem;
 }
 
 .resource {

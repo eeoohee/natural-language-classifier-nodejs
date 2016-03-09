@@ -25,7 +25,8 @@ $(document).ready(function() {
     $results = $('.results'),
     $classification = $('.classification'),
     $confidence = $('.confidence'),
-    $question = $('.questionText');
+    $question = $('.questionText'),
+    $script_input = $('.scriptInput');
 
 
   $('.ask-btn').click(function() {
@@ -55,6 +56,7 @@ $(document).ready(function() {
         $results.show();
         $classification.text(answers.top_class);
         $confidence.text(Math.floor(answers.classes[0].confidence * 100) + '%');
+        $script_input.text(question);
         $('html, body').animate({ scrollTop: $(document).height() }, 'fast');
       })
       .fail(function onError(error) {
@@ -67,19 +69,18 @@ $(document).ready(function() {
       });
   };
 
+  var script_num = 1;
   [
-    'Is it hot outside?',
-    'What is the expected high for today?',
-    'Will it be foggy tomorrow morning?',
-    'Should I prepare for sleet?',
-    'Will there be a storm today?'
+    "My question for the government is very simple. We know that housing solves problems. We know that housing pays for itself through the social investment. We know that housing is an integral part of building strong cities, strong neighbourhoods, but most important, strong families. In light of the fact we are facing an unprecedented crisis in Toronto, with 92,000 families, close to 200,000 people waiting for assisted housing, close to 5,000 people a year living in city shelters of whom half are children, with this calamity facing Canadians living in Toronto, with a calamity that is replicated unfortunately right across the country in every major city, every minor city, every medium city and every city of every description, why is the government satisfied with the status quo when it is literally putting people in harm's way?",
+    "The provinces and territories can also invest in renovation projects. For example, they can provide rent supplements, shelter allowances and assistance toward home ownership. There are often other ways our government has invested in new housing. Economic action plan 2013 also extended the homelessness partnering strategy with nearly $600 million in funding over five years. Our new evidence-based housing first approach aims to stabilize the lives of homeless individuals for the long term by first moving them into permanent housing and then providing additional supports that they may need. I would also remind hon. members that we have made significant investments in new housing during the stimulus phase of Canada's economic action plan, including $400 million to build new affordable housing for low-income seniors, $75 million"
   ].forEach(function(question){
-    $('<a>').text(question)
+    $('<a>').text('script'+script_num)
       .mousedown(function() {
         askQuestion(question);
         return false;
       })
       .appendTo('.example-questions');
+      script_num++;
   });
 
 

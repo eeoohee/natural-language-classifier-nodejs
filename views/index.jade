@@ -5,24 +5,35 @@ block row-content
   div.container
     div.row
       div.col-lg-12
-        h2 Try the service
+          h2 Members of Parliament (for platform analysis)
+          div.row
+            div.col-lg-6.col-md-6.col-xs-12
+              h4 Adam Vaughan
+              h4 Tony Clement
+              h4 Julie Dabrusin
+              h4 Pam Damoff
+              h4 Francis Drouin
+              h4 Kirsty Duncan
+              h4 Scott Duvall
+              h4 Julie Dzerowicz
+              h4 Ali Ehsassi
+      div.col-lg-12
+        h2 Classification of political transcripts
         div.row
           div.col-lg-12.col-md-12.col-xs-12
-            h3 Ask a question about the weather
-            p.help-block Watch the Natural Language Classifier categorize your weather-related question. In this demo, the classifier is trained to determine whether the question is related to <em>temperature</em> or <em>weather</em> conditions. The output includes the top classification and a confidence score.
+            h3 Predict the political topic given a script
+            p.help-block It categorizes a script. The classifier is trained to determine whether the script is related to <em>Youth</em> or <em>human rights</em>. The output includes the top classification and a confidence score.
         div.row
           div.col-lg-10.col-md-10.col-xs-8
-            input.questionText.form-control(placeholder='Enter a weather question or Try a sample question below', required='true')
+            input.questionText.form-control(placeholder='Input a script or Try a sample script below', required='true')
           div.col-lg-2.col-md-2.col-xs-4
-            button.btn.btn-block.ask-btn Ask
+            button.btn.btn-block.ask-btn Predict!
         div.row
           div.col-lg-6.col-md-6.col-xs-12
-            h4 Sample questions
+            h4 Sample scripts
             div.example-questions
           div.col-lg-6.col-md-6.col-xs-12
-            p.help-block The classifier often scores well with terms that it hasn't been trained on. In the sample questions, the words "sleet," "foggy," and "typhoon" are not part of the 
-              a(href='https://github.com/watson-developer-cloud/natural-language-classifier-nodejs/blob/master/training/weather_data_train.csv', target='_blank') training data
-              | , yet the classifier correctly handles questions about them. 
+            p.help-block The classifier often scores well with terms that it hasn't been trained on. 
       div.col-lg-12(style='height:300px;')
         div.row
           h2 Output
@@ -36,6 +47,11 @@ block row-content
               |  confident that the question submitted is talking about '
               span.classification
               | '.
+
+            p
+              strong Input Script: 
+              span.scriptInput
+
             p
               strong Classification: 
               span.classification
